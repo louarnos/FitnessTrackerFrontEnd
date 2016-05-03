@@ -114,14 +114,14 @@ const getFoodById = (success, failure, id) => {
   .fail(failure);
 };
 
-const addFoodToMeal = (success, failure, meal_id, food_id) => {
+const addFoodToMeal = (success, failure, mealId, foodId) => {
   $.ajax({
     method: 'POST',
     url: app.api + 'meal_items/',
     data: {
       meal_item: {
-        food_for_meal_id: food_id,
-        user_meal_id: meal_id,
+        food_for_meal_id: foodId,
+        user_meal_id: mealId,
       },
     },
   })
@@ -129,10 +129,10 @@ const addFoodToMeal = (success, failure, meal_id, food_id) => {
   .fail(failure);
 };
 
-const deleteMeal = (success, failure, meal_id) => {
+const deleteMeal = (success, failure, mealId) => {
   $.ajax({
     method: 'DELETE',
-    url: app.api + 'meals/' + meal_id,
+    url: app.api + 'meals/' + mealId,
     headers: {
       Authorization: 'Token token=' + user1.user.token,
     },
@@ -141,13 +141,13 @@ const deleteMeal = (success, failure, meal_id) => {
   .fail(failure);
 };
 
-const changeMealName = (success, failure, meal_id, new_name) => {
+const changeMealName = (success, failure, mealId, newName) => {
   $.ajax({
     method: 'PATCH',
-    url: app.api + 'meals/' + meal_id,
+    url: app.api + 'meals/' + mealId,
     data: {
       meal: {
-        meal_type: new_name
+        meal_type: newName,
       },
     },
     headers: {
@@ -157,6 +157,7 @@ const changeMealName = (success, failure, meal_id, new_name) => {
   .done(success)
   .fail(failure);
 };
+
 
 
 module.exports = {

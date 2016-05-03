@@ -41,6 +41,9 @@
             <input type="id" class="form-control" name="id" id="get-meal-by-id-id-field" placeholder="Enter Meal ID">
             <button type="submit" class="btn btn-primary" id="btn-get-meal-by-id">Get Meal by ID!</button>
           </form>
+          <div class="alert alert-danger hidden" role="alert" id="get-meal-by-id-failure-alert">
+            Log In to Get Your Meals!
+          </div>
           <table class="table table-inverse table-sm hidden" id="foods-in-meal-table">
             <caption>stuff</caption>
             <thead>
@@ -77,6 +80,9 @@
           <input type="string" class="form-control" name="meal_type" id="meal-type-form-input" placeholder="Breakfast, Lunch, Dinner, or Snack?">
           <button type="submit" class="btn btn-primary" id="div-btn-create-new-meal">Create A New Meal!</button>
         </form>
+        <div class="alert alert-danger hidden" role="alert" id="create-new-meal-failure-alert">
+          You Must Be Logged In to Create a Meal
+        </div>
       </div>
       <div class="content hidden" id="add-food-to-meal-div">
         <form class="form-group" id="add-food-to-meal-form">

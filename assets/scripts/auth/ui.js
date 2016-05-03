@@ -88,9 +88,10 @@ const getMealByIdSuccess = (data) => {
     currentMeal.meal.meal_type + ' with ID: ' + currentMeal.meal.id +
     ' created on: ' + currentMeal.meal.created_at
   );
+
   //`Meal name: ${currentMeal.meal.meal_type} with ID ${currentMeal.meal.id}`
   data.meal.meal_items.forEach(function (value) {
-    authApi.getFoodById(getFoodByIdSuccess, getFoodByIdFailure, value.id)
+    authApi.getFoodById(getFoodByIdSuccess, getFoodByIdFailure, value.id);
   });
   $('#delete-meal-form').removeClass('hidden');
   $('#update-meal-name-form').removeClass('hidden');
@@ -99,6 +100,10 @@ const getMealByIdSuccess = (data) => {
 };
 
 const getMealByIdFailure = (data) => {
+  $('#get-meal-by-id-failure-alert').removeClass('hidden');
+  setTimeout(function () {
+      $('#get-meal-by-id-failure-alert').addClass('hidden');
+    }, 1000);
   console.log(data);
 };
 
@@ -130,10 +135,11 @@ const addFoodToMealFailure = (data) => {
 const addFoodToMealSuccess = (food) => {
   console.log(food);
   $('#foods-for-create-meal-table').removeClass('hidden');
-  $('#foods-for-create-meal-table > tbody').append(displayFoodsAgain( {food} ));
+  $('#foods-for-create-meal-table > tbody').append(displayFoodsAgain({ food} ) );
 };
 
 const createMealFailure = (data) => {
+  console.log('wtf');
 };
 
 const deleteMealSuccess = (data) => {
@@ -141,11 +147,19 @@ const deleteMealSuccess = (data) => {
   console.log("success");
   $('#get-previous-meals-div').append(deleteMealSuccessTemp());
   $('#delete-meal-form').addClass('hidden');
+  $('#foods-in-meal-table > tbody').html('');
+  $('#foods-in-meal-table').addClass('hidden');
+  $('#update-meal-name-form').addClass('hidden');
 };
 
 const deleteMealFailure = (data) => {
   console.log(data);
   console.log("failure");
+};
+
+const updateMealSuccess = (data) => {
+  $('#foods-in-meal-table > tbody').html('');
+  authApi.getMealById(getMealByIdSuccess, getMealByIdFailure, currentMeal.meal);
 };
 
 module.exports = {
@@ -170,4 +184,5 @@ module.exports = {
   addFoodToMealFailure,
   deleteMealSuccess,
   deleteMealFailure,
+  updateMealSuccess,
 };

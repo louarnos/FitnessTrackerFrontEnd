@@ -6,6 +6,7 @@ const addNewFoodTemp = require('./templates/displayCreateNewFood.handlebars');
 const authApi = require('./auth/api.js');
 const authUi = require('./auth/ui.js');
 const currentMeal = require('./auth/current-meal.js');
+const user1 = require('./auth/user1.js');
 
 const addHandlers = () => {
   // Generates Templates for Main Content Div when Nav Buttons Are Pressed
@@ -113,8 +114,16 @@ const addHandlers = () => {
     $('#foods-in-meal-table > tbody').html('');
     let data = getFormFields(this);
     console.log(data);
-    authApi.getMealById(authUi.getMealByIdSuccess, authUi.getMealByIdFailure, data);
+    if(user1.user){
+      authApi.getMealById(authUi.getMealByIdSuccess, authUi.getMealByIdFailure, data);
+    }else {
+      $('#get-meal-by-id-failure-alert').removeClass('hidden');
+      setTimeout(function () {
+          $('#get-meal-by-id-failure-alert').addClass('hidden');
+        }, 2000);
+    }
   });
+
   $('#get-all-previous-meals-form').on('submit', function (event) {
     event.preventDefault();
     authApi.getAllMeals(authUi.getAllMealsSuccess, authUi.getAllMealsFailure);
@@ -123,7 +132,14 @@ const addHandlers = () => {
     event.preventDefault();
     let data = getFormFields(this);
     console.log(data);
-    authApi.createMeal(authUi.createMealSuccess, authUi.createMealFailure, data);
+    if(user1.user){
+      authApi.createMeal(authUi.createMealSuccess, authUi.createMealFailure, data);
+    }else {
+      $('#create-new-meal-failure-alert').removeClass('hidden');
+      setTimeout(function () {
+          $('#create-new-meal-failure-alert').addClass('hidden');
+        }, 2000);
+    }
   });
   $('#add-food-to-meal-form').on('submit', function (event) {
     event.preventDefault();
@@ -149,10 +165,15 @@ const addHandlers = () => {
     event.preventDefault();
     let data = $(this).serializeArray();
     console.log(data[0].value);
-    authApi.changeMealName(authUi.success,
+    authApi.changeMealName(authUi.updateMealSuccess,
                        authUi.failure,
                        currentMeal.meal.id, data[0].value);
   });
+
+  // $('h3').css('visibility', 'visible');
+  //   setTimeout(function () {
+  //     $('h3').css('visibility', 'hidden');
+  //   }, 1000);
 };
 
 module.exports = {
