@@ -15,22 +15,115 @@
 
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <button type="button" class="btn btn-default navbar-btn pull-left">________Sign in________</button>
-            <button type="button" class="btn btn-default navbar-btn pull-left">Search Previous Meals</button>
+            <button type="button" class="btn btn-default navbar-btn pull-left" id="btn-sign-up">Sign Up</button>
+            <button type="button" class="btn btn-default navbar-btn pull-left hidden" id="btn-change-pw">Change Password</button>
+            <button type="button" class="btn btn-default navbar-btn pull-left" id="btn-sign-in">&nbsp;Sign In&nbsp;</button>
+            <button type="button" class="btn btn-default navbar-btn pull-left hidden" id="btn-sign-out">Sign Out</button>
+            <button type="button" class="btn btn-default navbar-btn pull-left" id="btn-get-previous-meals">Search Old Meals</button>
             <a class="logo navbar-center" rel="home" href="#" title="Buy Sell Rent Everyting">
               <img class="logo" style="" src="https://lukeaux.files.wordpress.com/2012/05/tumblr_m3g64pellj1qbtss4o1_500.jpg">
             </a>
-            <button type="button" class="btn btn-default navbar-btn pull-right">Add Food to Database</button>
-            <button type="button" class="btn btn-default navbar-btn pull-right">__Create New Meal__</button>
+            <button type="button" class="btn btn-default navbar-btn pull-right" id="btn-add-new-food-to-database">Add Food to Database</button>
+            <button type="button" class="btn btn-default navbar-btn pull-right" id="btn-create-new-meal">&nbsp;&nbsp;Create New Meal&nbsp;&nbsp;</button>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
       <div class="main-page">
-        <div class="content1">
+        <div class="content" id="sign-up-div">
           <h1>Fitness Food Tracker</h1>
           <h2>Log-in to Start Tracking</h2>
         </div>
+        <div class="content hidden" id="sign-in-div"></div>
+        <div class="content hidden" id="add-new-food-to-database-div"></div>
+        <div class="content hidden" id="get-previous-meals-div">
+          <form class="form-group" id="get-previous-meals-by-id-form">
+            <legend>Get Meal by I.D.</legend>
+            <input type="id" class="form-control" name="id" id="get-meal-by-id-id-field" placeholder="Enter Meal ID">
+            <button type="submit" class="btn btn-primary" id="btn-get-meal-by-id">Get Meal by ID!</button>
+          </form>
+          <table class="table table-inverse table-sm hidden" id="foods-in-meal-table">
+            <caption>stuff</caption>
+            <thead>
+              <tr>
+                <th>Description</th>
+                <th>Calories</th>
+                <th>Grams Per Serving</th>
+                <th>Sat Fat</th>
+                <th>Mono Fat</th>
+                <th>Poly Fat</th>
+                <th>Carbs</th>
+                <th>Sugar</th>
+                <th>Protein</th>
+                <th>Fiber</th>
+                <th>Sodium</th>
+                <th>Choles</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+          <form class="form-group hidden" id="delete-meal-form">
+            <button type="submit" class="btn btn-primary" id="btn-delete-meal">Delete This Meal!</button>
+          </form>
+          <form class="form-group hidden" id="update-meal-name-form">
+            <legend>Change This Meal's Name</legend>
+            <input type="string" class="form-control" name="name-update" id="meal-patch-input-field" placeholder="New Meal Name">
+            <button type="submit" class="btn btn-primary" id="btn-update-meal-name">Change This Meal Name!</button>
+          </form>
       </div>
-
+      <div class="content hidden" id="create-new-meal-div">
+        <form class="form-group" id="create-new-meal-form">
+          <legend>Create A New Meal</legend>
+          <input type="string" class="form-control" name="meal_type" id="meal-type-form-input" placeholder="Breakfast, Lunch, Dinner, or Snack?">
+          <button type="submit" class="btn btn-primary" id="div-btn-create-new-meal">Create A New Meal!</button>
+        </form>
+      </div>
+      <div class="content hidden" id="add-food-to-meal-div">
+        <form class="form-group" id="add-food-to-meal-form">
+          <legend>Enter The Food You Would like to Add by ID</legend>
+          <input type="number" class="form-control" name="first" id="meal-type-form-input-one" placeholder="Food I.D.">
+          <input type="number" class="form-control" name="second" id="meal-type-form-input-two" placeholder="Food I.D.">
+          <input type="number" class="form-control" name="third" id="meal-type-form-input-three" placeholder="Food I.D.">
+          <input type="number" class="form-control" name="fourth" id="meal-type-form-input-four" placeholder="Food I.D.">
+          <input type="number" class="form-control" name="fifth" id="meal-type-form-input-five" placeholder="Food I.D.">
+          <button type="submit" class="btn btn-primary" id="btn-add-food-to-meal">Add Food!</button>
+        </form>
+        <table class="table table-inverse table-sm" id="foods-for-create-meal-table">
+          <caption>stuff</caption>
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Calories</th>
+              <th>Grams Per Serving</th>
+              <th>Sat Fat</th>
+              <th>Mono Fat</th>
+              <th>Poly Fat</th>
+              <th>Carbs</th>
+              <th>Sugar</th>
+              <th>Protein</th>
+              <th>Fiber</th>
+              <th>Sodium</th>
+              <th>Choles</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="content hidden" id="change-password-div">
+        <form class="form auth-form" id="change-password-form">
+          <legend>Enter Info Below to Change Your Password!</legend>
+          <div class="form-group">
+            <input type="email" class="form-control" name="credentials[email]"id="exampleInputEmail3" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <input type="password-old" class="form-control" name="password[new]" id="exampleInputPassword3" placeholder="Old Password">
+          </div>
+          <div class="form-group">
+            <input type="password-new" class="form-control" name="password[old]" id="exampleInputPassword3" placeholder="New Password">
+          </div>
+          <button type="submit" class="btn btn-primary">Change Password</button>
+        </form>
+      </div>
     </body>
 </html>
