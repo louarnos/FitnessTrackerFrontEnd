@@ -1591,7 +1591,7 @@ webpackJsonp([0],[
 	'use strict';
 
 	var app = {
-	  api: 'http://salty-river-32913.herokuapp.com/'
+	  api: 'https://salty-river-32913.herokuapp.com/'
 	};
 
 	module.exports = app;
