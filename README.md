@@ -11,7 +11,7 @@ Front End:
  - Jquery
  - Handlebars.js
  
-Back End:
+Back End: [Repo](https://github.com/louarnos/fitness_tracker)
  - Ruby
  - Rails
  - Postgres
