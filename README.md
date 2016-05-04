@@ -9,7 +9,7 @@ Front End:
  - HTML
  - CSS
  - Jquery
- - handlebars.js
+ - Handlebars.js
  
  Back End:
  - Ruby on Rails
@@ -26,7 +26,6 @@ Front End:
     
 # Wire Frames
 [Main Page] (https://app.moqups.com/louarnos/7K1jE6OVH6/view)
-[Database Tables](https://app.moqups.com/louarnos/7K1jE6OVH6/view)
 
 # User Stories
 
