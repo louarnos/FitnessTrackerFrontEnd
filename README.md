@@ -11,7 +11,7 @@ Front End:
  - Jquery
  - Handlebars.js
  
- Back End:
+Back End:
  - Ruby on Rails
 
 # Database Structure
@@ -22,7 +22,7 @@ There are four tables:
   - Meal_items
   - Foods
     
-  Users have many meals. Meals have many foods through meal_items. 
+Users have many meals. Meals have many foods through meal_items. 
     
 # Wire Frames
 
