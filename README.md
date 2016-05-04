@@ -16,16 +16,17 @@ Front End:
 
 # Database Structure
 
-  There are four tables:
-    - Users
-    - Meals
-    - Meal_items
-    - Foods
+There are four tables:
+  - Users
+  - Meals
+  - Meal_items
+  - Foods
     
-    Users have many meals. Meals have many foods through meal_items. 
+  Users have many meals. Meals have many foods through meal_items. 
     
 # Wire Frames
-[Main Page] (https://app.moqups.com/louarnos/7K1jE6OVH6/view)
+
+[link] (https://app.moqups.com/louarnos/7K1jE6OVH6/view)
 
 # User Stories
 
@@ -40,3 +41,4 @@ Front End:
 - Make meals searchable by name
 - Create an ideal calories calculator based on users age, weight, gender, etc. with designated macronutrients breakdown
 - Graph a meal/days meals as a macronutrient breakdown and compare to ideal.
+- Total calories and macros for a given day.
