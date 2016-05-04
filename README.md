@@ -1,6 +1,6 @@
 # What is Fitness Food Tracker?
 
-Fitness Food tracker is an app that allows users to create, store, and recall meals with access to a database of over 8000 foods. The nutritional information in the foods table was distributed by the USDA. 
+Fitness Food tracker is an app that allows users to create, store, and recall meals with access to a database of over 8000 foods. The nutritional information in the foods table was distributed by the USDA. Foods have attributes of a description, grams per serving, calories per serving, carbs, monosaturated fats, polysaturated fats, saturated fats, sugars, protein, sodium, cholesterol, and fiber.
 
 # Technologies Used
 
@@ -39,6 +39,7 @@ There are four tables:
 
 - Make the foods table searchable by keyword
 - Make meals searchable by name
-- Create an ideal calories calculator based on users age, weight, gender, etc. with designated macronutrients breakdown
-- Graph a meal/days meals as a macronutrient breakdown and compare to ideal.
+- Make meals searchable by date
+- Create an calorie goal calculator based on users age, weight, gender, etc. with designated macronutrients breakdown
+- Graph macronutrients of a given meal or day, and compare against goal designated by calculator. 
 - Total calories and macros for a given day.
