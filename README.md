@@ -12,14 +12,19 @@ Front End:
  - Handlebars.js
  
 Back End:
- - Ruby on Rails
+ - Ruby
+ - Rails
+ - Postgres
+ - SQL
 
 # Database Structure
 
 There are four tables:
   - Users
-  - Meals
-  - Meal_items
+  - Meals 
+    - Foreign Key of User
+  - Meal_items -- Joined table 
+    - Foreign Keys of Meal and Food
   - Foods
     
 Users have many meals. Meals have many foods through meal_items. 
@@ -35,11 +40,16 @@ Users have many meals. Meals have many foods through meal_items.
 - As a user I want to be able to see my meals from a given date
 - As a user I want to have an ideal macronutrient breakdown and see if my meal meets the ideal
 
-# Next Step
+# Things to improve
+
+In order of priority:
 
 - Make the foods table searchable by keyword
-- Make meals searchable by name
-- Make meals searchable by date
 - Create an calorie goal calculator based on users age, weight, gender, etc. with designated macronutrients breakdown
-- Graph macronutrients of a given meal or day, and compare against goal designated by calculator. 
 - Total calories and macros for a given day.
+- Make meals searchable by date
+- Graph macronutrients of a given meal or day, and compare against goal designated by calculator.
+- Make meals searchable by name
+
+ 
+
