@@ -1,6 +1,6 @@
 # What is Fitness Food Tracker?
 
-Fitness Food tracker is an app that allows users to create, store, and recall meals from a database of over 8000 foods. The nutritional information was distributed by the USDA. 
+Fitness Food tracker is an app that allows users to create, store, and recall meals with access to a database of over 8000 foods. The nutritional information in the foods table was distributed by the USDA. 
 
 # Technologies Used
 
@@ -14,9 +14,19 @@ Front End:
  Back End:
  - Ruby on Rails
 
-# Wire Frames
+# Database Structure
 
-[Wire Frames](https://app.moqups.com/louarnos/7K1jE6OVH6/view)
+  There are four tables:
+    - Users
+    - Meals
+    - Meal_items
+    - Foods
+    
+    Users have many meals. Meals have many foods through meal_items. 
+    
+# Wire Frames
+[Main Page] (https://app.moqups.com/louarnos/7K1jE6OVH6/view)
+[Database Tables](https://app.moqups.com/louarnos/7K1jE6OVH6/view)
 
 # User Stories
 
