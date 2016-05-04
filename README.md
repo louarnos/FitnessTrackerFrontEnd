@@ -50,6 +50,7 @@ In order of priority:
 - Make meals searchable by date
 - Graph macronutrients of a given meal or day, and compare against goal designated by calculator.
 - Make meals searchable by name
+- Improve styling and flow of page
 
  
 
