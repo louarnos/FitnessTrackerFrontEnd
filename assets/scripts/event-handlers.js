@@ -99,6 +99,9 @@ const addHandlers = () => {
   $('#change-password-form').on('submit', function (event) {
     event.preventDefault();
     let data = getFormFields(this);
+    console.log(data);
+    console.log(data.password.new);
+    console.log(data.password.old);
     authApi.changePw(authUi.changePw1Success, authUi.changePw1failure, data);
   });
   $('#add-new-food-to-database-div').on('submit', function (event) {
