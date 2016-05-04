@@ -194,7 +194,6 @@ webpackJsonp([0],[
 	    var data = $(this).serializeArray();
 	    $('#foods-for-create-meal-table > tbody').html('');
 	    console.log(data);
-	    debugger;
 	    data.forEach(function (foodID) {
 	      if (foodID.value) {
 	        authApi.addFoodToMeal(authUi.addFoodToMealSuccess, authUi.addFoodToMealFailure, currentMeal.meal.id, foodID.value);
